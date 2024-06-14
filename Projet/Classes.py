@@ -28,12 +28,12 @@ class Acteur(Personne):
 
 # Classe Employe héritant de Personne
 class Employe(Personne):
-    def __init__(self, nom: str, prenom: str, sexe: str, date_debut_emploi: str, username: str, password: str, type_acces: bool):
+    def __init__(self, nom: str, prenom: str, sexe: str, date_debut_emploi: str, username: str, password: str, type_acces: str):
         super().__init__(nom, prenom, sexe)
         self.date_debut_emploi = date_debut_emploi  # Date de début d'emploi
         self.username = username  # Nom d'utilisateur
         self.password = password  # Mot de passe
-        self.type_acces = type_acces  # Type d'accès (admin ou non)
+        self.type_acces = type_acces  # Type d'accès (admin ou lecture)
 
 # Classe représentant une carte de crédit
 class CarteCredit:
@@ -55,3 +55,9 @@ class Categorie:
     def __init__(self, nom_categorie: str, description_categorie: str):
         self.nom_categorie = nom_categorie  # Nom de la catégorie
         self.description_categorie = description_categorie  # Description de la catégorie
+
+#création d'un exemple d'employe pour la connexion
+exemple_employe = [
+    Employe(nom="test",prenom="test",sexe="M",date_debut_emploi="2024-01-06",username="admin",password="admin",type_acces="admin"),
+    Employe(nom="test2",prenom="test2",sexe="M",date_debut_emploi="2024-01-06",username="test",password="test",type_acces="lecture")
+    ]
